@@ -1,8 +1,8 @@
 {
   "lib/amplify/config.ts -> ../../../amplify_outputs.json": {
-    "id": 7661,
+    "id": "lib/amplify/config.ts -> ../../../amplify_outputs.json",
     "files": [
-      "static/chunks/661.628d932320f77780.js"
+      "static/chunks/_app-pages-browser_amplify_outputs_json.js"
     ]
   }
 }
