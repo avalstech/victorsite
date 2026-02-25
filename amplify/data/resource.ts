@@ -76,7 +76,7 @@ export const data = defineData({
       ])
       .secondaryIndexes((idx) => [
         idx("slug").sortKeys(["status"]),
-        idx("category").sortKeys(["createdAt"])
+        idx("category").sortKeys(["status"])
       ]),
 
     CaseStudy: a
@@ -101,7 +101,7 @@ export const data = defineData({
       ])
       .secondaryIndexes((idx) => [
         idx("slug").sortKeys(["status"]),
-        idx("industry").sortKeys(["createdAt"])
+        idx("industry").sortKeys(["status"])
       ]),
 
     Talk: a
@@ -162,7 +162,7 @@ export const data = defineData({
       .model({
         id: a.id().required(), // userId#type#contentId
         userId: a.string().required(),
-        contentType: a.enum(["BLOG", "CASE"]).required(),
+        contentType: a.enum(["BLOG", "CASE"]),
         contentId: a.string().required(),
         liked: a.boolean().required(),
         bookmarked: a.boolean().required()
@@ -203,9 +203,9 @@ export const data = defineData({
     Outbox: a
       .model({
         id: a.id(),
-        type: a.enum(["CONTACT_CONFIRMATION", "NEWSLETTER_CONFIRM"]).required(),
+        type: a.enum(["CONTACT_CONFIRMATION", "NEWSLETTER_CONFIRM"]),
         payloadJson: a.string().required(),
-        status: a.enum(["PENDING", "SENT", "FAILED"]).required(),
+        status: a.enum(["PENDING", "SENT", "FAILED"]),
         error: a.string()
       })
       .authorization((allow) => [
