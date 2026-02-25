@@ -1,0 +1,54 @@
+[00:00:02.028] Server  LOG     ✓ Ready in 1745ms
+[00:00:13.359] Server  LOG     ○ Compiling / ...
+[00:00:21.241] Server  ERROR   ⨯ Error: Cannot find module 'next/dist/server/lib/trace/tracer'
+Require stack:
+- /workspaces/victorsite/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js
+- /workspaces/victorsite/.next/dev/server/app/page.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/require.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/load-components.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/build/utils.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/build/swc/options.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/build/swc/index.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/lib/router-server.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/lib/start-server.js
+[00:00:24.740] Server  LOG     ○ Compiling /_error ...
+[00:00:27.393] Server  ERROR   ⨯ Error: Cannot find module '../shared/lib/constants'
+Require stack:
+- /workspaces/victorsite/.next/dev/server/vendor-chunks/next.js
+- /workspaces/victorsite/.next/dev/server/webpack-runtime.js
+- /workspaces/victorsite/.next/dev/server/pages/_document.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/require.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/load-components.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/build/utils.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/build/swc/options.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/build/swc/index.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/lib/router-server.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/lib/start-server.js
+[00:00:34.110] Browser ERROR   uncaughtError: Error: Cannot find module '../shared/lib/constants'
+Require stack:
+- /workspaces/victorsite/.next/dev/server/vendor-chunks/next.js
+- /workspaces/victorsite/.next/dev/server/webpack-runtime.js
+- /workspaces/victorsite/.next/dev/server/pages/_document.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/require.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/load-components.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/build/utils.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/build/swc/options.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/build/swc/index.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/lib/router-server.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/lib/start-server.js
+[00:01:35.495] Server  ERROR   ⨯ Error: Cannot find module 'next/dist/server/lib/trace/tracer'
+Require stack:
+- /workspaces/victorsite/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js
+- /workspaces/victorsite/.next/dev/server/app/page.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/require.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/load-components.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/build/utils.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/build/swc/options.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/build/swc/index.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/lib/router-server.js
+- /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/lib/start-server.js
+[00:01:35.543] Server  ERROR   ⨯ TypeError: Cannot redefine property: Head

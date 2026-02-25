@@ -5,7 +5,6 @@ const nextConfig = {
   },
   experimental: {
     serverActions: { allowedOrigins: ["localhost:3000"] }
-  },
-  turbopack: false
+  }
 };
 export default nextConfig;

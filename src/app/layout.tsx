@@ -36,14 +36,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Client Providers */}
         
         
-        {/* <Providers> */}
+        <Providers>
         <AnalyticsTracker />
         <Nav />
         <div id="app" className="min-h-screen">
         <main className="mx-auto max-w-6xl px-4 py-10">{children}</main>
         <Footer />
         </div>
-        {/* </Providers> */}
+        </Providers>
         <AppToaster />
       </body>
     </html>
