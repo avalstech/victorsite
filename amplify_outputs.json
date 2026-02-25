@@ -1,0 +1,21 @@
+{
+  "version": "1",
+  "auth": {
+    "user_pool_id": "dummy",
+    "user_pool_client_id": "dummy",
+    "identity_pool_id": "dummy",
+    "aws_region": "us-east-1",
+    "authentication_flow_type": "USER_SRP_AUTH",
+    "oauth": {}
+  },
+  "data": {
+    "url": "http://localhost:3000/graphql",
+    "aws_region": "us-east-1",
+    "default_authorization_type": "API_KEY",
+    "api_key": "dummy"
+  },
+  "storage": {
+    "aws_region": "us-east-1",
+    "bucket_name": "dummy"
+  }
+}
