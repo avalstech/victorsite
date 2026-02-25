@@ -52,3 +52,59 @@ Require stack:
 - /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/lib/router-server.js
 - /home/codespace/.npm/_npx/8b377f6eec906bc4/node_modules/next/dist/server/lib/start-server.js
 [00:01:35.543] Server  ERROR   ⨯ TypeError: Cannot redefine property: Head
+[00:05:15.629] Server  LOG     ○ Compiling / ...
+[00:05:18.639] Server  ERROR   ⨯ ./src/lib/amplify/config.ts:25:24
+Module not found: Can't resolve '../../../amplify_outputs.json'
+  23 |     // Fallback: local file if present
+  24 |     try {
+> 25 |       outputs = (await import("../../../amplify_outputs.json")).default;
+     |                        ^
+  26 |     } catch {
+  27 |       throw new Error("Amplify outputs not found. Run `amplify pull` or set NEXT_PUBLIC_AMPLIFY_OUTPUTS_URL.");
+  28 |     }
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/providers.tsx
+[00:05:19.399] Server  ERROR   ⨯ ./src/lib/amplify/config.ts:25:24
+Module not found: Can't resolve '../../../amplify_outputs.json'
+  23 |     // Fallback: local file if present
+  24 |     try {
+> 25 |       outputs = (await import("../../../amplify_outputs.json")).default;
+     |                        ^
+  26 |     } catch {
+  27 |       throw new Error("Amplify outputs not found. Run `amplify pull` or set NEXT_PUBLIC_AMPLIFY_OUTPUTS_URL.");
+  28 |     }
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/providers.tsx
+[00:05:22.621] Browser ERROR   uncaughtError: Error: Module not found: Can't resolve '../../../amplify_outputs.json'
+  23 |     // Fallback: local file if present
+  24 |     try {
+> 25 |       outputs = (await import("../../../amplify_outputs.json")).default;
+     |                        ^
+  26 |     } catch {
+  27 |       throw new Error("Amplify outputs not found. Run `amplify pull` or set NEXT_PUBLIC_AMPLIFY_OUTPUTS_URL.");
+  28 |     }
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/providers.tsx
+[00:05:22.858] Browser ERROR   ./src/lib/amplify/config.ts:25:24
+Module not found: Can't resolve '../../../amplify_outputs.json'
+  23 |     // Fallback: local file if present
+  24 |     try {
+> 25 |       outputs = (await import("../../../amplify_outputs.json")).default;
+     |                        ^
+  26 |     } catch {
+  27 |       throw new Error("Amplify outputs not found. Run `amplify pull` or set NEXT_PUBLIC_AMPLIFY_OUTPUTS_URL.");
+  28 |     }
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/providers.tsx
