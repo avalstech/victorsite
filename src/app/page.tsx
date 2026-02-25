@@ -3,28 +3,32 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { dataClient } from "@/lib/amplify/data";
+// import { dataClient } from "@/lib/amplify/data";
 import { ArrowRight, Briefcase, Cloud, Sparkles } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
-async function getFeatured() {
-  const [cases, posts, services, testimonials] = await Promise.all([
-    dataClient.models.CaseStudy.list({ filter: { featured: { eq: true }, status: { eq: "PUBLISHED" } }, limit: 3 }),
-    dataClient.models.BlogPost.list({ filter: { featured: { eq: true }, status: { eq: "PUBLISHED" } }, limit: 3 }),
-    dataClient.models.Service.list({ filter: { isActive: { eq: true } }, limit: 6 }),
-    dataClient.models.Testimonial.list({ filter: { isActive: { eq: true } }, limit: 6 })
-  ]);
-  return {
-    cases: cases.data ?? [],
-    posts: posts.data ?? [],
-    services: services.data ?? [],
-    testimonials: testimonials.data ?? []
-  };
-}
+// async function getFeatured() {
+//   const [cases, posts, services, testimonials] = await Promise.all([
+//     dataClient.models.CaseStudy.list({ filter: { featured: { eq: true }, status: { eq: "PUBLISHED" } }, limit: 3 }),
+//     dataClient.models.BlogPost.list({ filter: { featured: { eq: true }, status: { eq: "PUBLISHED" } }, limit: 3 }),
+//     dataClient.models.Service.list({ filter: { isActive: { eq: true } }, limit: 6 }),
+//     dataClient.models.Testimonial.list({ filter: { isActive: { eq: true } }, limit: 6 })
+//   ]);
+//   return {
+//     cases: cases.data ?? [],
+//     posts: posts.data ?? [],
+//     services: services.data ?? [],
+//     testimonials: testimonials.data ?? []
+//   };
+// }
 
 export default async function HomePage() {
-  const { cases, posts, services, testimonials } = await getFeatured();
+  // const { cases, posts, services, testimonials } = await getFeatured();
+  const cases = [];
+  const posts = [];
+  const services = [];
+  const testimonials = [];
 
   return (
     <div className="space-y-10">
