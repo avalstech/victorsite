@@ -140,7 +140,7 @@ export const data = defineData({
         allow.group("Editor").to(["read", "update"]),
         allow.authenticated.to(["create"])
       ])
-      .secondaryIndexes((idx) => [idx("status").sortKeys(["createdAt"]), idx("email").sortKeys(["createdAt"])]),
+      .secondaryIndexes((idx) => [idx("status").sortKeys(["id"]), idx("email").sortKeys(["id"])]),
 
     NewsletterSubscriber: a
       .model({
