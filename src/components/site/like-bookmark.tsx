@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Heart, Bookmark } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { dataClient } from "@/lib/amplify/data";
@@ -11,7 +11,7 @@ export function LikeBookmark({ contentType, contentId }: { contentType: "BLOG" |
   const [liked, setLiked] = useState(false);
   const [bookmarked, setBookmarked] = useState(false);
 
-  const load = async () => {
+  const load = useCallback(async () => {
     setLoading(true);
     try {
       const user = await getCurrentUser();
@@ -25,9 +25,9 @@ export function LikeBookmark({ contentType, contentId }: { contentType: "BLOG" |
     } finally {
       setLoading(false);
     }
-  };
+  }, [contentType, contentId]);
 
-  useEffect(() => { load(); /* eslint-disable-next-line */ }, [contentId]);
+  useEffect(() => { load(); }, [load]);
 
   const toggle = async (field: "liked" | "bookmarked") => {
     try {

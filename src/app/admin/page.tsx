@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useCallback } from "react";
 import { signInWithRedirect, signOut } from "aws-amplify/auth";
 import { currentUser, hasRole } from "@/lib/auth";
 import { dataClient } from "@/lib/amplify/data";
@@ -20,7 +20,7 @@ export default function AdminPage() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [stats, setStats] = useState<Stats>({ leadsNew: 0, subsConfirmed: 0, topPages: [] });
 
-  const load = async () => {
+  const load = useCallback(async () => {
     setLoading(true);
     try {
       const cu = await currentUser();
@@ -53,9 +53,9 @@ export default function AdminPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
-  useEffect(() => { load(); }, []);
+  useEffect(() => { load(); }, [load]);
 
   const login = async () => {
     await signInWithRedirect({ provider: "Google" }).catch(() => signInWithRedirect());
@@ -146,14 +146,14 @@ function AdminCrud({ title, model }: { title: string; model: "BlogPost" | "CaseS
   const [items, setItems] = useState<any[]>([]);
   const [open, setOpen] = useState(false);
 
-  const load = async () => {
+  const load = useCallback(async () => {
     setLoading(true);
     const res = await (dataClient.models as any)[model].list({ limit: 50 });
     setItems(res.data ?? []);
     setLoading(false);
-  };
+  }, [model]);
 
-  useEffect(() => { load(); }, []);
+  useEffect(() => { load(); }, [load]);
 
   return (
     <Card>

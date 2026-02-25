@@ -9,18 +9,28 @@ import { ArrowRight, Briefcase, Cloud, Sparkles } from "lucide-react";
 export const dynamic = "force-dynamic";
 
 async function getFeatured() {
-  const [cases, posts, services, testimonials] = await Promise.all([
-    dataClient.models.CaseStudy.list({ filter: { featured: { eq: true }, status: { eq: "PUBLISHED" } }, limit: 3 }),
-    dataClient.models.BlogPost.list({ filter: { featured: { eq: true }, status: { eq: "PUBLISHED" } }, limit: 3 }),
-    dataClient.models.Service.list({ filter: { isActive: { eq: true } }, limit: 6 }),
-    dataClient.models.Testimonial.list({ filter: { isActive: { eq: true } }, limit: 6 })
-  ]);
-  return {
-    cases: cases.data ?? [],
-    posts: posts.data ?? [],
-    services: services.data ?? [],
-    testimonials: testimonials.data ?? []
-  };
+  try {
+    const [cases, posts, services, testimonials] = await Promise.all([
+      dataClient.models.CaseStudy.list({ filter: { featured: { eq: true }, status: { eq: "PUBLISHED" } }, limit: 3 }),
+      dataClient.models.BlogPost.list({ filter: { featured: { eq: true }, status: { eq: "PUBLISHED" } }, limit: 3 }),
+      dataClient.models.Service.list({ filter: { isActive: { eq: true } }, limit: 6 }),
+      dataClient.models.Testimonial.list({ filter: { isActive: { eq: true } }, limit: 6 })
+    ]);
+    return {
+      cases: cases.data ?? [],
+      posts: posts.data ?? [],
+      services: services.data ?? [],
+      testimonials: testimonials.data ?? []
+    };
+  } catch (e) {
+    console.error("Failed to load featured content:", e);
+    return {
+      cases: [],
+      posts: [],
+      services: [],
+      testimonials: []
+    };
+  }
 }
 
 export default async function HomePage() {

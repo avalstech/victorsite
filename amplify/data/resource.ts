@@ -61,7 +61,7 @@ export const data = defineData({
         title: a.string().required(),
         excerpt: a.string().required(),
         bodyHtml: a.string().required(),
-        status: a.enum(["DRAFT", "PUBLISHED"]).required(),
+        status: a.enum(["DRAFT", "PUBLISHED"]),
         category: a.string().required(),
         tags: a.string().array(),
         featured: a.boolean().required(),
@@ -88,7 +88,7 @@ export const data = defineData({
         industry: a.string().required(),
         tags: a.string().array(),
         techStack: a.string().array(),
-        status: a.enum(["DRAFT", "PUBLISHED"]).required(),
+        status: a.enum(["DRAFT", "PUBLISHED"]),
         featured: a.boolean().required(),
         sections: a.json().array(),
         metrics: a.json().array(),
@@ -131,7 +131,7 @@ export const data = defineData({
         budget: a.string(),
         message: a.string().required(),
         attachmentKey: a.string(),
-        status: a.enum(["NEW", "CONTACTED", "WON", "LOST"]).required(),
+        status: a.enum(["NEW", "CONTACTED", "WON", "LOST"]),
         source: a.string().required(),
         userId: a.string()
       })
@@ -146,7 +146,7 @@ export const data = defineData({
       .model({
         id: a.id().required(), // email lowercase
         email: a.string().required(),
-        status: a.enum(["PENDING", "CONFIRMED", "UNSUBSCRIBED"]).required(),
+        status: a.enum(["PENDING", "CONFIRMED", "UNSUBSCRIBED"]),
         token: a.string().required(),
         confirmedAt: a.string(),
         unsubscribedAt: a.string()

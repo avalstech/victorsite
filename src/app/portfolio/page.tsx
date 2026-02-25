@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useCallback } from "react";
 import Link from "next/link";
 import { dataClient } from "@/lib/amplify/data";
 import { Card } from "@/components/ui/card";
@@ -19,7 +19,7 @@ export default function PortfolioPage() {
   const [nextToken, setNextToken] = useState<string | null>(null);
   const [prevTokens, setPrevTokens] = useState<string[]>([]);
 
-  const load = async (token: string | null, direction: "next" | "prev") => {
+  const load = useCallback(async (token: string | null, direction: "next" | "prev") => {
     setLoading(true);
     try {
       const filter: any = { status: { eq: "PUBLISHED" } };
@@ -36,14 +36,13 @@ export default function PortfolioPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [q, industry]);
 
-  useEffect(() => { load(null, "next"); /* eslint-disable-next-line */ }, []);
+  useEffect(() => { load(null, "next"); }, [load]);
   useEffect(() => {
     const t = setTimeout(() => load(null, "next"), 250);
     return () => clearTimeout(t);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [q, industry]);
+  }, [q, industry, load]);
 
   const industries = useMemo(() => Array.from(new Set(items.map((c) => c.industry).filter(Boolean) as string[])).slice(0, 10), [items]);
 

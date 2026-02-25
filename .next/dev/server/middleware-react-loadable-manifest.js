@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST="{\"lib/amplify/config.ts -> ../../../amplify_outputs.json\":{\"id\":\"lib/amplify/config.ts -> ../../../amplify_outputs.json\",\"files\":[\"static/chunks/_app-pages-browser_amplify_outputs_json.js\"]}}"
